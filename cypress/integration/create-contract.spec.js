@@ -35,6 +35,10 @@ describe('login', () => {
     //Scope of work
     cy.get("textarea[name='scope']").type('an information')
 
+    //Contractor's start date
+    cy.xpath("//div[contains(@class, 'deel-ui__calendar-input-container__input_dropdown-icon')]").click()
+    cy.xpath("//button[contains(@class, 'react-calendar__tile--active')]/preceding-sibling::button[1]").click()
+
     //Next Button
     cy.get('button[type=submit]').click({force: true})
 
