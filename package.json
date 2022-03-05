@@ -1,0 +1,35 @@
+{
+  "name": "deel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^9.5.1"
+  },
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^1.8.0",
+    "cypress": "^6.7.1",
+    "cypress-cucumber-preprocessor": "^2.5.4",
+    "cypress-file-upload": "^4.0.7",
+    "cypress-plugin-tab": "^1.0.5",
+    "cypress-teamcity-reporter": "^2.6.1",
+    "cypress-xpath": "^1.6.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:test": "cypress run --env allure=true,allureResultsPath=allure-results-e2e"
+  },
+  "cypress-cucumber-preprocessor": {
+    "step_definitions": "cypress/support/steps"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurbrandao0/hometask.git"
+  },
+  "author": "Arthur Brandão",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arthurbrandao0/hometask/issues"
+  },
+  "homepage": "https://github.com/arthurbrandao0/hometask#readme"
+}
