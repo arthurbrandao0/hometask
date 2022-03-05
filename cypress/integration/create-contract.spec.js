@@ -19,11 +19,11 @@ describe('login', () => {
 
     //Contractor's tax residence
     cy.xpath("//div[contains(@data-qa,'contractor-tax-residence') and contains(@class,'deel-ui__select__input-container')]").click()
-    cy.contains("Brazil").click({force: true})
+    cy.contains("United States").click({force: true})
 
     //Contractor's State
     cy.xpath("//div[contains(@data-qa,'contractor-tax-residence') and contains(@class,'deel-ui__select__input-container')]/label[contains(text(),'state')]//following-sibling::div").click({force: true})
-    cy.contains("Rio de Janeiro").click({force: true})
+    cy.contains("Colorado").click({force: true})
 
     //Job title
     cy.get("input[name='jobTitle']").type('QA')
@@ -37,5 +37,33 @@ describe('login', () => {
 
     //Next Button
     cy.get('button[type=submit]').click({force: true})
+
+    //Currency
+    cy.xpath("//div[(@class='deel-ui__select__input-container')]/label[contains(text(),'Currency')]//following-sibling::div").click({force: true})
+    cy.contains("GBP - British Pound").click({force: true})
+
+    //Payment rate
+    cy.xpath("//div[(@class='deel-ui__input-component')]/label[contains(text(),'Payment rate')]//following-sibling::input").type('1000')
+
+    //Payment frequency
+    cy.xpath("//div[(@class='deel-ui__select__input-container')]/label[contains(text(),'Payment frequency')]//following-sibling::div").click({force: true})
+    cy.contains("Weekly").click({force: true})
+
+    //Next Button
+    cy.get('button[type=submit]').click({force: true})
+
+    //Next Button
+    cy.get('button[type=submit]').click({force: true})
+
+    //Next Button
+    cy.get('button[data-qa="next"]').click({force: true})
+
+    //Create contract Button
+    cy.get('button[data-qa="create-contract"]').click({force: true})
+
+    cy.contains(contractname).should('be.visible')
+
+
+
   })
 })
